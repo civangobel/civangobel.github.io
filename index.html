@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civan Göbel | Kişisel Web Sitesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcome-screen">
+        <h1>Civan Göbel'in Kişisel Web Sitesine Hoşgeldiniz!</h1>
+    </div>
+
+    <div class="settings-menu" onclick="toggleMenu()">
+        <span>⚙ Ayarlar</span>
+        <nav id="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="about.html">Hakkımızda</a>
+            <a href="contact.html">İletişim</a>
+        </nav>
+    </div>
+
+    <main class="content-wrapper">
+        <div class="hero-container">
+            <div class="text-side">
+                <h1 class="hero-title">Civan Göbel</h1>
+                <p class="hero-subtitle">
+                    Futbolun disipliniyle yoğrulmuş, teknoloji ve üretimde mutlak başarıyı hedefleyen, 
+                    çözüm odaklı ve pes etmeyen bir vizyon.
+                </p>
+                <div class="hero-badges">
+                    <span>#Yazılım</span>
+                    <span>#CNC</span>
+                    <span>#Disiplin</span>
+                </div>
+            </div>
+            <div class="image-side">
+                <img src="civangobel.jpg" alt="Civan Göbel" class="profile-img">
+            </div>
+        </div>
+    </main>
+
+    <div id="chatbot-launcher" onclick="toggleChat()">
+        <span>💬</span>
+    </div>
+
+    <div id="chatbot-window">
+        <div class="chat-header">
+            <span>Civan'ın Asistanı</span>
+            <button onclick="toggleChat()">✕</button>
+        </div>
+        <div id="chat-body" class="chat-body">
+            <div class="message bot">Merhaba! Ben Civan'ın dijital asistanıyım. Sana nasıl yardımcı olabilirim?</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Mesajınızı yazın..." onkeypress="handleChatKey(event)">
+            <button onclick="sendMessage()">Gönder</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
