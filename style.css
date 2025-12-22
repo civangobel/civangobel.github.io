@@ -1,0 +1,207 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Karşılama Ekranı */
+#welcome-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+/* Ayarlar Menüsü */
+.settings-menu {
+    position: fixed;
+    top: 25px; left: 25px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+#nav-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+#nav-links a:hover { color: #aaa; }
+
+/* Ana İçerik Alanı */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+}
+
+.text-side h1 { font-size: 3rem; }
+
+.profile-img {
+    width: 350px;
+    border-radius: 20px;
+    border: 2px solid #333;
+}
+
+/* Chatbot Tasarımı */
+#chatbot-launcher {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 60px; height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2000;
+    font-size: 24px;
+}
+
+#chatbot-window {
+    position: fixed;
+    bottom: 100px; right: 30px;
+    width: 320px; height: 400px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    z-index: 2000;
+}
+
+.chat-header {
+    background: #222;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+}
+
+.chat-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+
+.message { padding: 8px 12px; border-radius: 8px; font-size: 0.9rem; max-width: 85%; }
+.bot { background: #333; align-self: flex-start; }
+.user { background: white; color: black; align-self: flex-end; }
+
+.chat-footer { padding: 10px; display: flex; gap: 5px; border-top: 1px solid #333; }
+#chat-input { flex: 1; background: #222; border: 1px solid #444; color: white; padding: 5px; }
+.chat-footer button { background: white; border: none; padding: 5px 10px; cursor: pointer; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column-reverse; text-align: center; }
+    .text-side h1 { font-size: 1.8rem; }
+    .profile-img { width: 250px; }
+}
+/* Hakkımızda & İletişim Ek Stilleri */
+.about-container, .contact-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-left: 5px solid #fff;
+    padding-left: 15px;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.skills h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.skills ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skills li {
+    background: #333;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.contact-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #bbb; /* Saf beyaz yerine hafif gri yaparak gözü yormayan, soft bir hava verir */
+    margin-top: 15px;
+    line-height: 1.6;
+    font-weight: 300; /* Yazıyı biraz daha ince yaparak modern bir görünüm sağlar */
+    max-width: 600px;
+}
